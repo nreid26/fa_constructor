@@ -1,1 +1,2 @@
+#Do not include packages (others can run pub get) or javascript builds 
 packages/
