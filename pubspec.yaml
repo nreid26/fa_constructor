@@ -1,0 +1,4 @@
+name: FA_Constructor
+description: A webapp for drawing finite automata
+dependencies:
+  browser: any
