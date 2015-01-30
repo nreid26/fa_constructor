@@ -1,2 +1,3 @@
-#Do not include dart source
+#Do not include dart source and reinclude packages
+!packages/
 *.dart
