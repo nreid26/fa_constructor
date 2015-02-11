@@ -7501,6 +7501,110 @@ var $$ = {};
 }],
 ["dart.dom.svg", "dart:svg", , P, {
   "^": "",
+  FEBlendElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEBlendElement"
+  },
+  FEColorMatrixElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEColorMatrixElement"
+  },
+  FEComponentTransferElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEComponentTransferElement"
+  },
+  FECompositeElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFECompositeElement"
+  },
+  FEConvolveMatrixElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEConvolveMatrixElement"
+  },
+  FEDiffuseLightingElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEDiffuseLightingElement"
+  },
+  FEDisplacementMapElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEDisplacementMapElement"
+  },
+  FEFloodElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEFloodElement"
+  },
+  FEGaussianBlurElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEGaussianBlurElement"
+  },
+  FEImageElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEImageElement"
+  },
+  FEMergeElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEMergeElement"
+  },
+  FEMorphologyElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEMorphologyElement"
+  },
+  FEOffsetElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEOffsetElement"
+  },
+  FEPointLightElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFEPointLightElement"
+  },
+  FESpecularLightingElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFESpecularLightingElement"
+  },
+  FESpotLightElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFESpotLightElement"
+  },
+  FETileElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFETileElement"
+  },
+  FETurbulenceElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFETurbulenceElement"
+  },
+  FilterElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGFilterElement"
+  },
+  ForeignObjectElement: {
+    "^": "GraphicsElement;x=,y=",
+    "%": "SVGForeignObjectElement"
+  },
+  GeometryElement: {
+    "^": "GraphicsElement;",
+    "%": "SVGCircleElement|SVGEllipseElement|SVGLineElement|SVGPathElement|SVGPolygonElement|SVGPolylineElement;SVGGeometryElement"
+  },
+  GraphicsElement: {
+    "^": "SvgElement;",
+    "%": "SVGAElement|SVGClipPathElement|SVGDefsElement|SVGGElement|SVGSwitchElement;SVGGraphicsElement"
+  },
+  ImageElement0: {
+    "^": "GraphicsElement;x=,y=",
+    "%": "SVGImageElement"
+  },
+  MaskElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGMaskElement"
+  },
+  PatternElement: {
+    "^": "SvgElement;x=,y=",
+    "%": "SVGPatternElement"
+  },
+  RectElement: {
+    "^": "GeometryElement;x=,y=",
+    "%": "SVGRectElement"
+  },
   ScriptElement: {
     "^": "SvgElement;type}",
     $isScriptElement: true,
@@ -7547,7 +7651,23 @@ var $$ = {};
     },
     $isSvgElement: true,
     $isEventTarget: true,
-    "%": "SVGAElement|SVGAltGlyphDefElement|SVGAltGlyphElement|SVGAltGlyphItemElement|SVGAnimateElement|SVGAnimateMotionElement|SVGAnimateTransformElement|SVGAnimationElement|SVGCircleElement|SVGClipPathElement|SVGComponentTransferFunctionElement|SVGCursorElement|SVGDefsElement|SVGDescElement|SVGDiscardElement|SVGEllipseElement|SVGFEBlendElement|SVGFEColorMatrixElement|SVGFEComponentTransferElement|SVGFECompositeElement|SVGFEConvolveMatrixElement|SVGFEDiffuseLightingElement|SVGFEDisplacementMapElement|SVGFEDistantLightElement|SVGFEDropShadowElement|SVGFEFloodElement|SVGFEFuncAElement|SVGFEFuncBElement|SVGFEFuncGElement|SVGFEFuncRElement|SVGFEGaussianBlurElement|SVGFEImageElement|SVGFEMergeElement|SVGFEMergeNodeElement|SVGFEMorphologyElement|SVGFEOffsetElement|SVGFEPointLightElement|SVGFESpecularLightingElement|SVGFESpotLightElement|SVGFETileElement|SVGFETurbulenceElement|SVGFilterElement|SVGFontElement|SVGFontFaceElement|SVGFontFaceFormatElement|SVGFontFaceNameElement|SVGFontFaceSrcElement|SVGFontFaceUriElement|SVGForeignObjectElement|SVGGElement|SVGGeometryElement|SVGGlyphElement|SVGGlyphRefElement|SVGGradientElement|SVGGraphicsElement|SVGHKernElement|SVGImageElement|SVGLineElement|SVGLinearGradientElement|SVGMPathElement|SVGMarkerElement|SVGMaskElement|SVGMetadataElement|SVGMissingGlyphElement|SVGPathElement|SVGPatternElement|SVGPolygonElement|SVGPolylineElement|SVGRadialGradientElement|SVGRectElement|SVGSVGElement|SVGSetElement|SVGStopElement|SVGSwitchElement|SVGSymbolElement|SVGTSpanElement|SVGTextContentElement|SVGTextElement|SVGTextPathElement|SVGTextPositioningElement|SVGTitleElement|SVGUseElement|SVGVKernElement|SVGViewElement;SVGElement"
+    "%": "SVGAltGlyphDefElement|SVGAltGlyphItemElement|SVGAnimateElement|SVGAnimateMotionElement|SVGAnimateTransformElement|SVGAnimationElement|SVGComponentTransferFunctionElement|SVGCursorElement|SVGDescElement|SVGDiscardElement|SVGFEDistantLightElement|SVGFEDropShadowElement|SVGFEFuncAElement|SVGFEFuncBElement|SVGFEFuncGElement|SVGFEFuncRElement|SVGFEMergeNodeElement|SVGFontElement|SVGFontFaceElement|SVGFontFaceFormatElement|SVGFontFaceNameElement|SVGFontFaceSrcElement|SVGFontFaceUriElement|SVGGlyphElement|SVGGlyphRefElement|SVGGradientElement|SVGHKernElement|SVGLinearGradientElement|SVGMPathElement|SVGMarkerElement|SVGMetadataElement|SVGMissingGlyphElement|SVGRadialGradientElement|SVGSetElement|SVGStopElement|SVGSymbolElement|SVGTitleElement|SVGVKernElement|SVGViewElement;SVGElement"
+  },
+  SvgSvgElement: {
+    "^": "GraphicsElement;x=,y=",
+    "%": "SVGSVGElement"
+  },
+  TextContentElement: {
+    "^": "GraphicsElement;",
+    "%": "SVGTextPathElement;SVGTextContentElement"
+  },
+  TextPositioningElement: {
+    "^": "TextContentElement;x=,y=",
+    "%": "SVGAltGlyphElement|SVGTSpanElement|SVGTextElement|SVGTextPositioningElement"
+  },
+  UseElement: {
+    "^": "GraphicsElement;x=,y=",
+    "%": "SVGUseElement"
   },
   _AttributeClassSet: {
     "^": "CssClassSetImpl;_svg$_element",
@@ -7604,7 +7724,7 @@ var $$ = {};
     return 536870911 & hash + ((16383 & hash) << 15 >>> 0);
   },
   Point: {
-    "^": "Object;x>,y",
+    "^": "Object;x>,y>",
     toString$0: function(_) {
       return "Point(" + H.S(this.x) + ", " + H.S(this.y) + ")";
     },
@@ -7712,36 +7832,83 @@ var $$ = {};
   _RectangleBase: {
     "^": "Object;",
     get$right: function(_) {
-      return this.get$left(this) + this.width;
+      var t1, t2;
+      t1 = this.get$left(this);
+      t2 = this.get$width(this);
+      if (typeof t1 !== "number")
+        return t1.$add();
+      if (typeof t2 !== "number")
+        return H.iae(t2);
+      return t1 + t2;
     },
     get$bottom: function(_) {
-      return this.get$top(this) + this.height;
+      var t1, t2;
+      t1 = this.get$top(this);
+      t2 = this.get$height(this);
+      if (typeof t1 !== "number")
+        return t1.$add();
+      if (typeof t2 !== "number")
+        return H.iae(t2);
+      return t1 + t2;
     },
     toString$0: function(_) {
-      return "Rectangle (" + this.get$left(this) + ", " + this.top + ") " + this.width + " x " + this.height;
+      return "Rectangle (" + H.S(this.get$left(this)) + ", " + H.S(this.get$top(this)) + ") " + H.S(this.get$width(this)) + " x " + H.S(this.get$height(this));
     },
     $eq: function(_, other) {
-      var t1, t2;
+      var t1, t2, t3;
       if (other == null)
         return false;
       t1 = J.getInterceptor(other);
       if (!t1.$isRectangle)
         return false;
-      if (this.get$left(this) === t1.get$left(other)) {
-        t2 = this.top;
-        t1 = t2 === t1.get$top(other) && this.left + this.width === t1.get$right(other) && t2 + this.height === t1.get$bottom(other);
+      t2 = this.get$left(this);
+      t3 = t1.get$left(other);
+      if (t2 == null ? t3 == null : t2 === t3) {
+        t2 = this.get$top(this);
+        t3 = t1.get$top(other);
+        if (t2 == null ? t3 == null : t2 === t3) {
+          t2 = this.get$left(this);
+          t3 = this.get$width(this);
+          if (typeof t2 !== "number")
+            return t2.$add();
+          if (typeof t3 !== "number")
+            return H.iae(t3);
+          if (t2 + t3 === t1.get$right(other)) {
+            t2 = this.get$top(this);
+            t3 = this.get$height(this);
+            if (typeof t2 !== "number")
+              return t2.$add();
+            if (typeof t3 !== "number")
+              return H.iae(t3);
+            t1 = t2 + t3 === t1.get$bottom(other);
+          } else
+            t1 = false;
+        } else
+          t1 = false;
       } else
         t1 = false;
       return t1;
     },
     get$hashCode: function(_) {
-      var t1 = this.top;
-      return P._JenkinsSmiHash_finish(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(0, this.get$left(this) & 0x1FFFFFFF), t1 & 0x1FFFFFFF), this.left + this.width & 0x1FFFFFFF), t1 + this.height & 0x1FFFFFFF));
+      var t1, t2, t3, t4, t5, t6;
+      t1 = J.get$hashCode$(this.get$left(this));
+      t2 = J.get$hashCode$(this.get$top(this));
+      t3 = this.get$left(this);
+      t4 = this.get$width(this);
+      if (typeof t3 !== "number")
+        return t3.$add();
+      if (typeof t4 !== "number")
+        return H.iae(t4);
+      t5 = this.get$top(this);
+      t6 = this.get$height(this);
+      if (typeof t5 !== "number")
+        return t5.$add();
+      if (typeof t6 !== "number")
+        return H.iae(t6);
+      return P._JenkinsSmiHash_finish(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(P._JenkinsSmiHash_combine0(0, t1), t2), t3 + t4 & 0x1FFFFFFF), t5 + t6 & 0x1FFFFFFF));
     },
     get$topLeft: function(_) {
-      var t1 = new P.Point(this.get$left(this), this.top);
-      t1.$builtinTypeInfo = this.$builtinTypeInfo;
-      return t1;
+      return H.setRuntimeTypeInfo(new P.Point(this.get$left(this), this.get$top(this)), [H.getRuntimeTypeArgument(this, "_RectangleBase", 0)]);
     }
   },
   Rectangle: {
@@ -8107,6 +8274,9 @@ var $$ = {};
       J.getInterceptor$x(t1).set$left(t1, H.S(p.x) + "px");
       C.CssStyleDeclaration_methods.set$top(t1, H.S(p.y) + "px");
     },
+    get$origin: function(receiver) {
+      return receiver.fa_constructor$Positionable$_origin;
+    },
     set$origin: function(receiver, p) {
       receiver.fa_constructor$Positionable$_origin = p;
       this.set$position(receiver, receiver.fa_constructor$Positionable$_fa_constructor$_position);
@@ -8378,7 +8548,7 @@ var $$ = {};
   StateMenuElement: {
     "^": "DivElement_Positionable_Visible_PropagationStopping;state},fa_constructor$Positionable$_fa_constructor$_position,fa_constructor$Positionable$_origin",
     StateMenuElement$created$0: function(receiver) {
-      var accepting, t1, start, text, remove;
+      var accepting, t1, start, text, label, remove;
       accepting = W.InputElement_InputElement("checkbox");
       t1 = J.get$onChange$x(accepting);
       H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure(receiver, accepting)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
@@ -8393,11 +8563,17 @@ var $$ = {};
       t1 = t1.get$onChange(text);
       H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure1(receiver, text)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
       receiver.appendChild(text);
+      label = W.InputElement_InputElement("text");
+      t1 = J.getInterceptor$x(label);
+      t1.set$placeholder(label, "start");
+      t1 = t1.get$onChange(label);
+      H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure2(receiver, label)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
+      receiver.appendChild(label);
       remove = W.InputElement_InputElement("button");
       t1 = J.getInterceptor$x(remove);
       t1.set$value(remove, "Remove");
       t1 = t1.get$onClick(remove);
-      H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure2(receiver)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
+      H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure3(receiver)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
       receiver.appendChild(remove);
       new W._ElementCssClassSet(receiver).add$1(0, "menu");
       this.set$visible(receiver, false);
@@ -8443,8 +8619,10 @@ var $$ = {};
       t3 = $.transitions;
       if (t2 === true)
         t1._starting = J.getOrConstruct$2$x(t3, null, t1);
-      else
+      else {
         J.removeExact$1$x(t3, t1._starting);
+        t1._starting = null;
+      }
       return t2;
     }
   },
@@ -8459,9 +8637,17 @@ var $$ = {};
     }
   },
   StateMenuElement$created_closure2: {
-    "^": "Closure:24;this_6",
+    "^": "Closure:24;this_6,label_7",
     call$1: function(e) {
-      return J.remove$0$ax(this.this_6.state);
+      var t1 = this.this_6.state._starting;
+      if (t1 != null)
+        J.set$innerHtml$x(J.get$label$x(t1), J.get$value$x(this.label_7));
+    }
+  },
+  StateMenuElement$created_closure3: {
+    "^": "Closure:24;this_8",
+    call$1: function(e) {
+      return J.remove$0$ax(this.this_8.state);
     }
   },
   Transition: {
@@ -8470,7 +8656,7 @@ var $$ = {};
       J.set$visible$x(receiver._menu, e);
     },
     render$1: function(receiver, context) {
-      var s, e, mid, t1, t2, t3, t4, n, c, t5, p, t6, angle;
+      var s, e, mid, t1, t2, t3, t4, n, c, t5;
       s = L.unround(J.get$position$x(receiver.start));
       e = L.unround(J.get$position$x(receiver.end));
       mid = s.$add(0, e).$mul(0, 0.5);
@@ -8487,26 +8673,15 @@ var $$ = {};
       if (typeof t4 !== "number")
         return H.iae(t4);
       n = H.setRuntimeTypeInfo(new P.Point(t1 - t2, t3 - t4), [P.$double]);
-      c = n.$mul(0, 0.2).$add(0, mid);
+      c = n.$mul(0, n.get$magnitude() < 200 ? 0.2 : 40 / n.get$magnitude()).$add(0, mid);
       t5 = new L.Transition_render_evaluate(s, e, c);
       this.set$position(receiver, L.round(t5.call$1(0.5)));
-      J.set$position$x(receiver.label, L.round(n.$mul(0, 30 / n.get$magnitude())));
-      p = this.findTip$1(receiver, t5);
-      t5 = p.y;
-      if (typeof t5 !== "number")
-        return t5.$sub();
-      t6 = p.x;
-      if (typeof t6 !== "number")
-        return t6.$sub();
-      angle = Math.atan2(t5 - t1, t6 - t4);
+      J.adjust$1$x(receiver.label, n.$mul(0, 1 / n.get$magnitude()));
       context.beginPath();
       context.moveTo(t3, t2);
       context.quadraticCurveTo(c.x, c.y, t4, t1);
       context.stroke();
-      context.beginPath();
-      context.moveTo(t6, t5);
-      context.arc(t6, t5, 12, angle - 0.6283185307179586, angle + 0.6283185307179586, false);
-      context.fill("nonzero");
+      this.renderTip$2(receiver, context, t5);
     },
     remove$0: function(receiver) {
       var t1;
@@ -8517,8 +8692,8 @@ var $$ = {};
         t1.reset$0(0);
       $.handler = new L.NullHandler();
     },
-    findTip$1: function(receiver, evaluate) {
-      var e, p, t1, t2, t, m;
+    renderTip$2: function(receiver, context, evaluate) {
+      var e, p, t1, t2, t, m, t3, t4, t5, angle;
       e = L.unround(J.get$position$x(receiver.end));
       p = evaluate.call$1(0.5);
       if (p.distanceTo$1(e) > J.get$radius$x(receiver.end))
@@ -8536,10 +8711,28 @@ var $$ = {};
             t2 = t;
           }
         }
-      return p;
+      t1 = J.getInterceptor$x(p);
+      t2 = t1.get$y(p);
+      t3 = e.y;
+      if (typeof t2 !== "number")
+        return t2.$sub();
+      if (typeof t3 !== "number")
+        return H.iae(t3);
+      t4 = t1.get$x(p);
+      t5 = e.x;
+      if (typeof t4 !== "number")
+        return t4.$sub();
+      if (typeof t5 !== "number")
+        return H.iae(t5);
+      angle = Math.atan2(t2 - t3, t4 - t5);
+      context.beginPath();
+      context.moveTo(t1.get$x(p), t1.get$y(p));
+      context.arc(t1.get$x(p), t1.get$y(p), 12, angle - 0.6283185307179586, angle + 0.6283185307179586, false);
+      context.fill("nonzero");
     },
     Transition$created$0: function(receiver) {
       J.set$position$x(receiver.style, "absolute");
+      receiver.appendChild(receiver.label);
     },
     static: {Transition$created: function(receiver) {
         var t1, t2, t3;
@@ -8570,7 +8763,7 @@ var $$ = {};
   LoopbackTransition: {
     "^": "Transition;start,end,label,_menu,fa_constructor$Positionable$_fa_constructor$_position,fa_constructor$Positionable$_origin",
     render$1: function(receiver, context) {
-      var e, t1, t2, r, n, c, c0, c1, p, t3, t4, angle;
+      var e, t1, t2, r, n, c, c0, c1, t3;
       e = L.unround(J.get$position$x(receiver.end));
       t1 = window.innerWidth;
       if (typeof t1 !== "number")
@@ -8589,29 +8782,14 @@ var $$ = {};
       c1 = c.$sub(0, n);
       t2 = new L.LoopbackTransition_render_evaluate(e, c0, c1);
       this.set$position(receiver, L.round(t2.call$1(0.5)));
-      J.set$position$x(receiver.label, L.round(r.$mul(0, 30)));
-      p = this.findTip$1(receiver, t2);
-      t2 = p.y;
-      t1 = e.y;
-      if (typeof t2 !== "number")
-        return t2.$sub();
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      t3 = p.x;
-      t4 = e.x;
-      if (typeof t3 !== "number")
-        return t3.$sub();
-      if (typeof t4 !== "number")
-        return H.iae(t4);
-      angle = Math.atan2(t2 - t1, t3 - t4);
+      J.adjust$1$x(receiver.label, r);
       context.beginPath();
-      context.moveTo(t4, t1);
-      context.bezierCurveTo(c0.x, c0.y, c1.x, c1.y, t4, t1);
+      t1 = e.x;
+      t3 = e.y;
+      context.moveTo(t1, t3);
+      context.bezierCurveTo(c0.x, c0.y, c1.x, c1.y, t1, t3);
       context.stroke();
-      context.beginPath();
-      context.moveTo(t3, t2);
-      context.arc(t3, t2, 12, angle - 0.6283185307179586, angle + 0.6283185307179586, false);
-      context.fill("nonzero");
+      this.renderTip$2(receiver, context, t2);
     },
     static: {LoopbackTransition$created: function(receiver) {
         var t1, t2, t3;
@@ -8636,7 +8814,7 @@ var $$ = {};
   StartTransition: {
     "^": "Transition;start,end,label,_menu,fa_constructor$Positionable$_fa_constructor$_position,fa_constructor$Positionable$_origin",
     render$1: function(receiver, context) {
-      var e, t1, t2, t3, t4, s, c, p, t5, angle;
+      var e, t1, t2, t3, t4, s, c;
       e = L.unround(J.get$position$x(receiver.end));
       t1 = e.x;
       t2 = J.get$radius$x(receiver.end);
@@ -8653,22 +8831,12 @@ var $$ = {};
       c = H.setRuntimeTypeInfo(new P.Point((t1 + t4) / 2, t3 - J.get$radius$x(receiver.end)), [P.$double]);
       t2 = new L.StartTransition_render_evaluate(e, s, c);
       this.set$position(receiver, L.round(t2.call$1(0.5)));
-      p = this.findTip$1(receiver, t2);
-      t2 = p.y;
-      if (typeof t2 !== "number")
-        return t2.$sub();
-      t5 = p.x;
-      if (typeof t5 !== "number")
-        return t5.$sub();
-      angle = Math.atan2(t2 - t3, t5 - t1);
+      J.adjust$1$x(receiver.label, H.setRuntimeTypeInfo(new P.Point(0, -1), [P.$double]));
       context.beginPath();
       context.moveTo(t4, s.y);
       context.quadraticCurveTo(c.x, c.y, t1, t3);
       context.stroke();
-      context.beginPath();
-      context.moveTo(t5, t2);
-      context.arc(t5, t2, 12, angle - 0.6283185307179586, angle + 0.6283185307179586, false);
-      context.fill("nonzero");
+      this.renderTip$2(receiver, context, t2);
     },
     static: {StartTransition$created: function(receiver) {
         var t1, t2, t3;
@@ -8753,8 +8921,52 @@ var $$ = {};
   TransitionLabelElement: {
     "^": "DivElement_Positionable3;fa_constructor$Positionable$_fa_constructor$_position,fa_constructor$Positionable$_origin",
     set$innerHtml: function(receiver, s) {
+      var t1;
       W.Element.prototype.set$innerHtml.call(this, receiver, s);
-      this.set$origin(receiver, H.setRuntimeTypeInfo(new P.Point(C.JSInt_methods._tdivFast$1(C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.clientWidth)), 2), C.JSInt_methods._tdivFast$1(C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.clientHeight)), 2)), [P.$int]));
+      t1 = C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.offsetWidth));
+      this.set$origin(receiver, L.round(H.setRuntimeTypeInfo(new P.Point(t1 / 2, C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.offsetHeight)) / 2), [P.$double])));
+      J.redraw$0$x($.transitions);
+    },
+    adjust$1: function(receiver, unit) {
+      var t1, t2, k, t3, t4, t5, k0;
+      unit = unit.$mul(0, 3);
+      t1 = unit.x;
+      t2 = unit.y;
+      k = unit;
+      while (true) {
+        t3 = k.x;
+        t3.toString;
+        t4 = Math.abs(t3);
+        t5 = this.get$origin(receiver).x;
+        if (typeof t5 !== "number")
+          return H.iae(t5);
+        if (t4 < t5) {
+          t4 = k.y;
+          t4.toString;
+          t4 = Math.abs(t4);
+          t5 = this.get$origin(receiver).y;
+          if (typeof t5 !== "number")
+            return H.iae(t5);
+          t5 = t4 < t5;
+          t4 = t5;
+        } else
+          t4 = false;
+        if (!t4)
+          break;
+        if (typeof t3 !== "number")
+          return t3.$add();
+        if (typeof t1 !== "number")
+          return H.iae(t1);
+        t4 = k.y;
+        if (typeof t4 !== "number")
+          return t4.$add();
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        k0 = new P.Point(t3 + t1, t4 + t2);
+        k0.$builtinTypeInfo = [H.getTypeArgumentByIndex(k, 0)];
+        k = k0;
+      }
+      this.set$position(receiver, L.round(k));
     },
     TransitionLabelElement$created$0: function(receiver) {
       new W._ElementCssClassSet(receiver).add$1(0, "label");
@@ -8788,9 +9000,9 @@ var $$ = {};
         t2 = J.getInterceptor$x(ret);
         t2.set$start(ret, start);
         t2.set$end(ret, end);
-        ret._menu = L.TransitionMenuElement_TransitionMenuElement(ret);
-        ret.appendChild(ret.label);
-        ret.appendChild(ret._menu);
+        t2 = L.TransitionMenuElement_TransitionMenuElement(ret);
+        ret._menu = t2;
+        ret.appendChild(t2);
         t = ret;
       } else if (start == null) {
         ret = L.ElementFactory_construct(C.Type_ntP, "start_transition", "div");
@@ -8801,9 +9013,9 @@ var $$ = {};
         t2 = J.getInterceptor$x(ret);
         t2.set$start(ret, start);
         t2.set$end(ret, end);
-        ret._menu = L.TransitionMenuElement_TransitionMenuElement(ret);
-        ret.appendChild(ret.label);
-        ret.appendChild(ret._menu);
+        t2 = L.TransitionMenuElement_TransitionMenuElement(ret);
+        ret._menu = t2;
+        ret.appendChild(t2);
         t = ret;
       }
       t1.add$1(0, t);
@@ -9098,6 +9310,9 @@ J.$indexSet$ax = function(receiver, a0, a1) {
 };
 J.addEventListener$3$x = function(receiver, a0, a1, a2) {
   return J.getInterceptor$x(receiver).addEventListener$3(receiver, a0, a1, a2);
+};
+J.adjust$1$x = function(receiver, a0) {
+  return J.getInterceptor$x(receiver).adjust$1(receiver, a0);
 };
 J.append$1$x = function(receiver, a0) {
   return J.getInterceptor$x(receiver).append$1(receiver, a0);

@@ -68,7 +68,10 @@ class StateElement extends DivElement with Positionable, Editable {
 	bool get starting => _starting != null;
 	void set starting(bool b) {
 		if(b) { _starting = transitions.getOrConstruct(null, this); }
-		else { transitions.removeExact(_starting); }
+		else { 
+			transitions.removeExact(_starting);
+			_starting = null;
+		}
 	}
 }
 
@@ -89,6 +92,12 @@ class StateMenuElement extends DivElement with Positionable, Visible, Propagatio
 		var text = new TextInputElement()..placeholder = 'label';
 		text.onChange.listen((Event e) => state._label.innerHtml = text.value);
 		append(text);
+		
+		var label = new TextInputElement()..placeholder = 'start';
+		label.onChange.listen((Event e) { 
+			if(state.starting) { state._starting.label.innerHtml = label.value; }
+		});
+		append(label);
 		
 		var remove = new ButtonInputElement()..value = 'Remove';
         remove.onClick.listen((Event e) => state.remove());  

@@ -7,7 +7,10 @@ class Transition extends DivElement with Positionable, Editable {
 	TransitionMenuElement _menu;
 	
 	//Constructor
-	Transition.created() : super.created() { style.position = 'absolute'; }
+	Transition.created() : super.created() { 
+		style.position = 'absolute';
+		append(label);
+	}
 	
 	factory Transition(StateElement start, StateElement end) {
 		Transition ret = ElementFactory.construct(Transition, 'transition', 'div');
@@ -16,7 +19,6 @@ class Transition extends DivElement with Positionable, Editable {
 			..start = start
 			..end = end
 			.._menu = new TransitionMenuElement(ret)
-			..append(ret.label)
 			..append(ret._menu);
 	}
 	
@@ -28,25 +30,20 @@ class Transition extends DivElement with Positionable, Editable {
 		//Vector an position calculations
 		Point<double> s = unround(start.position), e = unround(end.position), mid = (s + e) * 0.5,
 					  n = new Point<double>(e.y - s.y, s.x - e.x), //Normal
-					  c = n * 0.2 + mid;
+					  c = n * ((n.magnitude < 200) ? 0.2 : (40 / n.magnitude)) + mid;
     	
     	Point<double> evaluate(num t) => (s * (1 - t) * (1 - t)) + (c * 2 * t * (1 - t)) + (e * t * t);
 	    
 		position = round(evaluate(0.5));
-		label.position = round(n * (30 / n.magnitude));
-    	Point<double> p = findTip(evaluate);
+		label.adjust(n * (1 / n.magnitude));
 		
 		//Render
-		num angle = atan2(p.y - e.y, p.x - e.x), da = PI / 5;
 		context
 			..beginPath()
 			..moveTo(s.x, s.y)
 			..quadraticCurveTo(c.x, c.y, e.x, e.y)
-			..stroke()
-			..beginPath()
-			..moveTo(p.x, p.y)
-			..arc(p.x, p.y, 12, angle - da, angle + da)
-			..fill();		
+			..stroke();
+		renderTip(context, evaluate);
 	}
 	
 	void remove() {
@@ -55,7 +52,7 @@ class Transition extends DivElement with Positionable, Editable {
 		handler = new NullHandler();
 	}
 	
-	Point<double> findTip(Point<double> evaluate(num t)) {
+	void renderTip(CanvasRenderingContext2D context, Point<double> evaluate(num t)) {
 		num t1 = 0, t2 = 1, t = 0.5;
 		Point<double> e = unround(end.position), p = evaluate(t);
 		
@@ -70,8 +67,16 @@ class Transition extends DivElement with Positionable, Editable {
 				else { break; }
 			}
 		}
-		return p;
+		
+		num angle = atan2(p.y - e.y, p.x - e.x), da = PI / 5;
+		context
+			..beginPath()
+			..moveTo(p.x, p.y)
+			..arc(p.x, p.y, 12, angle - da, angle + da)
+			..fill();
 	}
+	
+	
 }
 
 class LoopbackTransition extends Transition {
@@ -85,7 +90,6 @@ class LoopbackTransition extends Transition {
 			..start = start
 			..end = end
 			.._menu = new TransitionMenuElement(ret)
-			..append(ret.label)
 			..append(ret._menu);
 	}
 	
@@ -101,20 +105,15 @@ class LoopbackTransition extends Transition {
     	Point<double> evaluate(num t) => (e * (t * t * t + (1 - t) * (1 - t) * (1 - t))) + (c0 * (1 - t) + c1 * t) * 3 * t * (1 - t);	    
     	
 		position = round(evaluate(0.5));
-		label.position = round(r * 30);
-		Point<double> p = findTip(evaluate);
+		label.adjust(r);
 
 		//Render
-		num angle = atan2(p.y - e.y, p.x - e.x), da = PI / 5;
 		context
 			..beginPath()
 			..moveTo(e.x, e.y)
 			..bezierCurveTo(c0.x, c0.y, c1.x, c1.y, e.x, e.y)
-			..stroke()
-			..beginPath()
-			..moveTo(p.x, p.y)
-			..arc(p.x, p.y, 12, angle - da, angle + da)
-			..fill();
+			..stroke();
+		renderTip(context, evaluate);
 	}
 }
 
@@ -137,19 +136,15 @@ class StartTransition extends Transition {
     	Point<double> evaluate(num t) => (s * (1 - t) * (1 - t)) + (c * 2 * t * (1 - t)) + (e * t * t);	    
     	
 		position = round(evaluate(0.5));
-		Point<double> p = findTip(evaluate);
+		label.adjust(new Point<double>(0.0, -1.0));
 
 		//Render
-		num angle = atan2(p.y - e.y, p.x - e.x), da = PI / 5;
 		context
 			..beginPath()
 			..moveTo(s.x, s.y)
 			..quadraticCurveTo(c.x, c.y, e.x, e.y)
-			..stroke()
-			..beginPath()
-			..moveTo(p.x, p.y)
-			..arc(p.x, p.y, 12, angle - da, angle + da)
-			..fill();
+			..stroke();
+		renderTip(context, evaluate);
 	}
 }
 
@@ -192,6 +187,16 @@ class TransitionLabelElement extends DivElement with Positionable {
 	String get innerHtml => super.innerHtml;
 	void   set innerHtml(String s) {
 		super.innerHtml = s;
-		origin = new Point<int>(clientWidth ~/ 2, clientHeight ~/ 2);
+		origin = round(new Point<double>(borderEdge.width / 2, borderEdge.height / 2));
+		transitions.redraw();
+	}
+	
+	void adjust(Point<double> unit) {
+		unit *= 3;
+		Point<double> k = unit;
+		
+		while(k.x.abs() < origin.x && k.y.abs() < origin.y) { k += unit; }
+	
+		position = round(k);
 	}
 }
