@@ -93,9 +93,9 @@ class StateMenuElement extends DivElement with Positionable, Visible, Propagatio
 		text.onChange.listen((Event e) => state._label.innerHtml = text.value);
 		append(text);
 		
-		var label = new TextInputElement()..placeholder = 'start';
+		var label = new TextAreaElement()..placeholder = 'start';
 		label.onChange.listen((Event e) { 
-			if(state.starting) { state._starting.label.innerHtml = label.value; }
+			if(state.starting) { state._starting.label.innerHtml = label.value.replaceAll('\n', '<br>'); }
 		});
 		append(label);
 		

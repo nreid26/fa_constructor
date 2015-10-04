@@ -163,8 +163,8 @@ class TransitionMenuElement extends DivElement with Positionable, Visible, Propa
 	factory TransitionMenuElement(Transition transition) {
 		TransitionMenuElement ret = ElementFactory.construct(TransitionMenuElement, 'transition_menu', 'div');
 		
-		var text = new InputElement(type: 'text')..placeholder = 'label';
-		text.onChange.listen((Event e) => transition.label.innerHtml = text.value);
+		var text = new TextAreaElement()..placeholder = 'label';
+		text.onChange.listen((Event e) => transition.label.innerHtml = text.value.replaceAll('\n', '<br>'));
 		ret.append(text);
 		
 		var remove = new InputElement(type: 'button')..value = 'Remove';
@@ -187,7 +187,7 @@ class TransitionLabelElement extends DivElement with Positionable {
 	String get innerHtml => super.innerHtml;
 	void   set innerHtml(String s) {
 		super.innerHtml = s;
-		origin = round(new Point<double>(borderEdge.width / 2, borderEdge.height / 2));
+		origin = round(new Point<double>(borderEdge.width, borderEdge.height) * 0.5);
 		transitions.redraw();
 	}
 	

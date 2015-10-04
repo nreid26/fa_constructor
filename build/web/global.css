@@ -40,6 +40,7 @@ body {
 	z-index: 3;
 	padding: 10px;
 	white-space: nowrap;
+	box-sizing: border-box;
 }
 
 .name {

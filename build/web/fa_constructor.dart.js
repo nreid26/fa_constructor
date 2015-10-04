@@ -573,6 +573,9 @@ var $$ = {};
         return false;
       return other === this.substring$1(receiver, t1 - otherLength);
     },
+    replaceAll$2: function(receiver, from, to) {
+      return H.stringReplaceAllUnchecked(receiver, from, to);
+    },
     startsWith$2: function(receiver, pattern, index) {
       var endIndex;
       if (index > receiver.length)
@@ -2748,6 +2751,25 @@ var $$ = {};
   },
   applyHooksTransformer: function(transformer, hooks) {
     return transformer(hooks) || hooks;
+  },
+  stringReplaceAllUnchecked: function(receiver, from, to) {
+    var result, $length, i, t1;
+    if (from === "")
+      if (receiver === "")
+        return to;
+      else {
+        result = P.StringBuffer$("");
+        $length = receiver.length;
+        result.write$1(to);
+        for (i = 0; i < $length; ++i) {
+          t1 = receiver[i];
+          t1 = result._contents += t1;
+          result._contents = t1 + to;
+        }
+        return result._contents;
+      }
+    else
+      return receiver.replace(new RegExp(from.replace(new RegExp("[[\\]{}()*+?.\\\\^$|]", 'g'), "\\$&"), 'g'), to.replace(/\$/g, "$$$$"));
   },
   ReflectionInfo: {
     "^": "Object;jsFunction,data,isAccessor,requiredParameterCount,optionalParameterCount,areOptionalParametersNamed,functionType,cachedSortedIndices",
@@ -8563,7 +8585,7 @@ var $$ = {};
       t1 = t1.get$onChange(text);
       H.setRuntimeTypeInfo(new W._EventStreamSubscription(0, t1._target, t1._eventType, W._wrapZone(new L.StateMenuElement$created_closure1(receiver, text)), t1._useCapture), [H.getTypeArgumentByIndex(t1, 0)])._tryResume$0();
       receiver.appendChild(text);
-      label = W.InputElement_InputElement("text");
+      label = document.createElement("textarea", null);
       t1 = J.getInterceptor$x(label);
       t1.set$placeholder(label, "start");
       t1 = t1.get$onChange(label);
@@ -8641,7 +8663,7 @@ var $$ = {};
     call$1: function(e) {
       var t1 = this.this_6.state._starting;
       if (t1 != null)
-        J.set$innerHtml$x(J.get$label$x(t1), J.get$value$x(this.label_7));
+        J.set$innerHtml$x(J.get$label$x(t1), J.replaceAll$2$s(J.get$value$x(this.label_7), "\n", "<br>"));
     }
   },
   StateMenuElement$created_closure3: {
@@ -8878,7 +8900,7 @@ var $$ = {};
       }, TransitionMenuElement_TransitionMenuElement: function(transition) {
         var ret, text, t1, remove;
         ret = L.ElementFactory_construct(C.Type_0G6, "transition_menu", "div");
-        text = W.InputElement_InputElement("text");
+        text = document.createElement("textarea", null);
         t1 = J.getInterceptor$x(text);
         t1.set$placeholder(text, "label");
         t1 = t1.get$onChange(text);
@@ -8907,7 +8929,7 @@ var $$ = {};
     call$1: function(e) {
       var t1, t2;
       t1 = J.get$label$x(this.transition_0);
-      t2 = J.get$value$x(this.text_1);
+      t2 = J.replaceAll$2$s(J.get$value$x(this.text_1), "\n", "<br>");
       J.set$innerHtml$x(t1, t2);
       return t2;
     }
@@ -8924,7 +8946,7 @@ var $$ = {};
       var t1;
       W.Element.prototype.set$innerHtml.call(this, receiver, s);
       t1 = C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.offsetWidth));
-      this.set$origin(receiver, L.round(H.setRuntimeTypeInfo(new P.Point(t1 / 2, C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.offsetHeight)) / 2), [P.$double])));
+      this.set$origin(receiver, L.round(H.setRuntimeTypeInfo(new P.Point(t1, C.JSNumber_methods.toInt$0(C.JSNumber_methods.roundToDouble$0(receiver.offsetHeight))), [P.$double]).$mul(0, 0.5)));
       J.redraw$0$x($.transitions);
     },
     adjust$1: function(receiver, unit) {
@@ -9424,6 +9446,9 @@ J.removeExact$1$x = function(receiver, a0) {
 };
 J.render$1$x = function(receiver, a0) {
   return J.getInterceptor$x(receiver).render$1(receiver, a0);
+};
+J.replaceAll$2$s = function(receiver, a0, a1) {
+  return J.getInterceptor$s(receiver).replaceAll$2(receiver, a0, a1);
 };
 J.send$1$x = function(receiver, a0) {
   return J.getInterceptor$x(receiver).send$1(receiver, a0);
